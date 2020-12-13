@@ -26,7 +26,7 @@ class PDFPage extends StatefulWidget {
   _PDFPageState createState() => _PDFPageState();
 }
 
-class _PDFPageState extends State<PDFPage> {
+class _PDFPageState extends State<PDFPage> with AutomaticKeepAliveClientMixin{
   ImageProvider provider;
 
   @override
@@ -64,4 +64,8 @@ class _PDFPageState extends State<PDFPage> {
           child: Image(image: provider),
         ));
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

@@ -62,7 +62,7 @@ class PDFViewer extends StatefulWidget {
   _PDFViewerState createState() => _PDFViewerState();
 }
 
-class _PDFViewerState extends State<PDFViewer> {
+class _PDFViewerState extends State<PDFViewer> with AutomaticKeepAliveClientMixin{
   bool _isLoading = true;
   int _pageNumber;
   bool _swipeEnabled = true;
@@ -318,4 +318,8 @@ class _PDFViewerState extends State<PDFViewer> {
           : Container(),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
